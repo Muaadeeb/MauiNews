@@ -6,7 +6,7 @@ public partial class App : Application
 	{
 		InitializeComponent();
 
-		MainPage = new Pages.News();
+		MainPage = new Pages.NewsPage();
         //MainPage = new AppShell();
     }
 }

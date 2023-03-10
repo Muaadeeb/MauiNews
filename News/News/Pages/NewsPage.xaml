@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="News.Pages.News">
+             x:Class="News.Pages.NewsPage">
 
     <!--RowDefinitions="Auto, Auto, *" read as auto, auto, and static (fill remaining space).-->
     <Grid RowDefinitions="Auto, Auto, *">
-        <Label Grid.Row="0" Text="News Channel 24" FontSize="Title" VerticalOptions="Center" HorizontalOptions="Center"></Label>
+        <Label Grid.Row="0" Text="Sam''s 24 Hour News" FontSize="Title" VerticalOptions="Center" HorizontalOptions="Center"></Label>
         <CollectionView Grid.Row="1" x:Name="Categories" HeightRequest="60">
             <CollectionView.ItemsLayout>
                 <LinearItemsLayout Orientation="Horizontal" ItemSpacing="5"></LinearItemsLayout>
@@ -25,8 +25,8 @@
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <StackLayout Padding="10">
-                        <Image HeightRequest="200"></Image>
-                        <Label FontSize="Medium"></Label>
+                        <Image HeightRequest="200" Source="{Binding Image}"></Image>
+                        <Label FontSize="Medium" Text="{Binding Title}"></Label>
                     </StackLayout>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
