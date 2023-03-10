@@ -14,12 +14,10 @@
                 <DataTemplate>
                     <StackLayout Padding="10">
                         <Label FontSize="Medium"></Label>
-
                     </StackLayout>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
-
         <CollectionView Grid.Row="2" x:Name="News">
             <CollectionView.ItemsLayout>
                 <LinearItemsLayout Orientation="Vertical" ItemSpacing="15"></LinearItemsLayout>
