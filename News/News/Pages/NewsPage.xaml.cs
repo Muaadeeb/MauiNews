@@ -16,6 +16,8 @@ public partial class NewsPage : ContentPage
         new Category(){Name= "Health"},
     };
 
+    private bool IsNextPage = false;
+
     public NewsPage()
 	{
 		InitializeComponent();
@@ -27,7 +29,11 @@ public partial class NewsPage : ContentPage
     protected override async void OnAppearing()
     {
 		base.OnAppearing();
-        await PassCategory("breaking-news"); 
+
+        if (IsNextPage is false)
+        {
+            await PassCategory("breaking-news");
+        }
     }
 
     private async void Categories_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -52,6 +58,12 @@ public partial class NewsPage : ContentPage
         News.ItemsSource = Articles;
     }
 
+    private void News_SelectionChanged(object sender, SelectionChangedEventArgs e)
+    {
+        var selectedItem = e.CurrentSelection.FirstOrDefault() as Article;
+        IsNextPage = true;
+        Navigation.PushAsync(new NewsDetail(selectedItem));
+    }
 
     // a default MAUI lifeCycle method.
     //protected override void OnDisappearing()

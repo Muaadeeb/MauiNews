@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="News.Pages.NewsPage">
+             x:Class="News.Pages.NewsPage"
+             NavigationPage.HasNavigationBar="false">
 
     <!--RowDefinitions="Auto, Auto, *" read as auto, auto, and static (fill remaining space).-->
     <Grid RowDefinitions="Auto, Auto, *">
@@ -18,14 +19,14 @@
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
-        <CollectionView Grid.Row="2" x:Name="News">
+        <CollectionView Grid.Row="2" x:Name="News" SelectionMode="Single" SelectionChanged="News_SelectionChanged">
             <CollectionView.ItemsLayout>
                 <LinearItemsLayout Orientation="Vertical" ItemSpacing="15"></LinearItemsLayout>
             </CollectionView.ItemsLayout>
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <StackLayout Padding="10">
-                        <Image HeightRequest="200" Source="{Binding Image}"></Image>
+                        <Image HeightRequest="200" Source="{Binding Image}" Aspect="Fill"></Image>
                         <Label FontSize="Medium" Text="{Binding Title}"></Label>
                     </StackLayout>
                 </DataTemplate>
