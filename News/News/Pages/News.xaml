@@ -2,4 +2,42 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="News.Pages.News">
+
+    <!--RowDefinitions="Auto, Auto, *" read as auto, auto, and static (fill remaining space).-->
+    <Grid RowDefinitions="Auto, Auto, *">
+        <Label Grid.Row="0" Text="News Channel 24" FontSize="Title" VerticalOptions="Center" HorizontalOptions="Center"></Label>
+        <CollectionView Grid.Row="1" x:Name="Categories" HeightRequest="60">
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout Orientation="Horizontal" ItemSpacing="5"></LinearItemsLayout>
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout Padding="10">
+                        <Label FontSize="Medium"></Label>
+
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <CollectionView Grid.Row="2" x:Name="News">
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout Orientation="Vertical" ItemSpacing="15"></LinearItemsLayout>
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout Padding="10">
+                        <Image HeightRequest="200"></Image>
+                        <Label FontSize="Medium"></Label>
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+
+
+    </Grid>
+
+
+
 </ContentPage>
