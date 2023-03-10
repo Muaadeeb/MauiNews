@@ -6,14 +6,14 @@
     <!--RowDefinitions="Auto, Auto, *" read as auto, auto, and static (fill remaining space).-->
     <Grid RowDefinitions="Auto, Auto, *">
         <Label Grid.Row="0" Text="Sam''s 24 Hour News" FontSize="Title" VerticalOptions="Center" HorizontalOptions="Center"></Label>
-        <CollectionView Grid.Row="1" x:Name="Categories" HeightRequest="60">
+        <CollectionView Grid.Row="1" x:Name="Categories" HeightRequest="60" SelectionMode="Single" SelectionChanged="Categories_SelectionChanged">
             <CollectionView.ItemsLayout>
                 <LinearItemsLayout Orientation="Horizontal" ItemSpacing="5"></LinearItemsLayout>
             </CollectionView.ItemsLayout>
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <StackLayout Padding="10">
-                        <Label FontSize="Medium"></Label>
+                        <Label FontSize="Medium" Text="{Binding Name}"></Label>
                     </StackLayout>
                 </DataTemplate>
             </CollectionView.ItemTemplate>

@@ -2,13 +2,25 @@
 
 public class ApiService
 {
-    private const string url = "https://gnews.io/api/v4/top-headlines?category=general&apikey=be1323e95fb4fa7316d1b7ecc96014f0&lang=en&topic=sports";
+    
 
-    public async Task<Root> GetNews()
+    public async Task<Root> GetNews(string categoryName)
     {
-        var _client = new HttpClient();
-        var response = await _client.GetAsync(url);
-        return await ProcessResponseAsync(response);
+        categoryName = categoryName.ToLowerInvariant();
+
+        try
+        {
+            var url = $"https://gnews.io/api/v4/top-headlines?category=general&apikey=be1323e95fb4fa7316d1b7ecc96014f0&lang=en&topic={categoryName}";
+
+            var _client = new HttpClient();
+            var response = await _client.GetAsync(url);
+            return await ProcessResponseAsync(response);
+        }
+        catch (Exception ex)
+        {
+            throw new Exception(ex.ToString());
+        }
+        
     }
 
     public async Task<Root> ProcessResponseAsync(HttpResponseMessage response)
