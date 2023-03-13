@@ -7,7 +7,8 @@
         <ToolbarItem Text="Item 1" Priority="2" Order="Secondary"></ToolbarItem>
         <ToolbarItem Text="Item 2" Priority="1" Order="Secondary"></ToolbarItem>
         <ToolbarItem Text="Item 3" Priority="0" Order="Secondary"></ToolbarItem>
-        <ToolbarItem IconImageSource="share.svg" Priority="3" Order="Primary" x:Name="Share" Clicked="Share_Clicked"></ToolbarItem>
+        <ToolbarItem IconImageSource="share.svg" Priority="3" Order="Primary" x:Name="TbShare" Clicked="TbShare_Clicked"></ToolbarItem>
+        
     </ContentPage.ToolbarItems> 
 
 
