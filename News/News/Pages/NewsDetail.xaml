@@ -3,6 +3,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="News.Pages.NewsDetail">
 
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Item 1" Priority="2" Order="Secondary"></ToolbarItem>
+        <ToolbarItem Text="Item 2" Priority="1" Order="Secondary"></ToolbarItem>
+        <ToolbarItem Text="Item 3" Priority="0" Order="Secondary"></ToolbarItem>
+        <ToolbarItem IconImageSource="share.svg" Priority="3" Order="Primary"></ToolbarItem>
+    </ContentPage.ToolbarItems> 
+
+
     <Grid RowDefinitions="Auto, Auto, Auto">
         <Image Grid.Row="0" x:Name="ImgNews" HeightRequest="300" Aspect="Fill"></Image>
         <Label Grid.Row="1" x:Name="Title" Margin="10" FontSize="Title" FontAttributes="Bold" TextDecorations="Underline"></Label>

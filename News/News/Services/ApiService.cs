@@ -14,7 +14,8 @@ public class ApiService
 
             var _client = new HttpClient();
             var response = await _client.GetAsync(url);
-            return await ProcessResponseAsync(response);
+            var newsResult = await ProcessResponseAsync(response);
+            return newsResult;
         }
         catch (Exception ex)
         {
